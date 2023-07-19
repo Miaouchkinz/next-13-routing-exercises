@@ -1,6 +1,6 @@
 'use client';
-import React from 'react';
 
+import React from 'react';
 import styles from './ScreenSaver.module.css';
 
 function ScreenSaver({ color = 'white' }) {
@@ -16,8 +16,7 @@ function ScreenSaver({ color = 'white' }) {
   const ref = React.useRef();
 
   React.useEffect(() => {
-    const bb =
-      ref.current.getBoundingClientRect();
+    const bb = ref.current.getBoundingClientRect();
 
     window.requestAnimationFrame(() => {
       const nextPosition = {
@@ -33,15 +32,13 @@ function ScreenSaver({ color = 'white' }) {
       // in the opposite direction.
       if (
         nextPosition.x < 0 ||
-        nextPosition.x >
-          window.innerWidth - bb.width
+        nextPosition.x > window.innerWidth - bb.width
       ) {
         nextInertia.horizontal *= -1;
       }
       if (
         nextPosition.y < 0 ||
-        nextPosition.y >
-          window.innerHeight - bb.height
+        nextPosition.y > window.innerHeight - bb.height
       ) {
         nextInertia.vertical *= -1;
       }
